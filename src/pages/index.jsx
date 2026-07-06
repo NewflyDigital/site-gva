@@ -1,0 +1,556 @@
+import Menu from "../components/menu";
+import Rodape from "../components/rodape";
+import Whats from "../components/whats";
+import styles from "../styles/Index.module.css";
+import React, { useState } from "react";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGaugeHigh,
+  faClock,
+  faGlobe,
+  faRocket,
+  faShieldHalved,
+  faMountain,
+  faArrowsLeftRight,
+  faClockRotateLeft,
+  faLayerGroup,
+} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+export default function Home() {
+  const solutions = [
+    {
+      icon: "🚚",
+      title: "Starlink Frota",
+      subtitle:
+        "Caminhões, ônibus, máquinas agrícolas, veículos de mineração e operações móveis.",
+      benefits: [
+        "Internet em movimento",
+        "Cobertura ampla",
+        "Comunicação em tempo real",
+        "Telemetria",
+        "Rastreamento",
+      ],
+    },
+    {
+      icon: "🚢",
+      title: "Starlink Marítima",
+      subtitle: "Conectividade estável para navegação e operações offshore.",
+      benefits: [
+        "Embarcações",
+        "Plataformas",
+        "Pesca",
+        "Navegação offshore",
+        "Internet em alto-mar",
+      ],
+    },
+    {
+      icon: "✈️",
+      title: "Starlink Aviação",
+      subtitle: "Internet corporativa a bordo com latência baixíssima.",
+      benefits: [
+        "Aviões Executivos",
+        "Operações aéreas",
+        "Internet durante o voo",
+        "Baixa latência",
+      ],
+    },
+    {
+      icon: "🚁",
+      title: "Starlink Helicóptero",
+      subtitle:
+        "Operações críticas de resgate, segurança e transporte executivo.",
+      benefits: [
+        "Operações policiais",
+        "Resgate",
+        "Transporte executivo",
+        "Operações críticas",
+      ],
+    },
+    {
+      icon: "🖥️",
+      title: "Starlink Fixa com IP Público",
+      subtitle:
+        "Solução completa para matrizes, filiais e servidores corporativos.",
+      benefits: [
+        "Empresas",
+        "Filiais",
+        "VPN",
+        "Servidores",
+        "Monitoramento",
+        "IP Público",
+      ],
+    },
+    {
+      icon: "📡",
+      title: "Starlink Fixa com IP NAT",
+      subtitle:
+        "Excelente custo-benefício para locais remotos e projetos temporários.",
+      benefits: [
+        "Escritórios",
+        "Fazendas",
+        "Obras",
+        "Áreas remotas",
+        "Excelente custo-benefício",
+      ],
+    },
+  ];
+
+  const stats = [
+    {
+      icon: "👥",
+      number: "500+",
+      label: "Empresas Atendidas",
+    },
+    {
+      icon: "📈",
+      number: "1200+",
+      label: "Projetos Entregues",
+    },
+    {
+      icon: "🛡️",
+      number: "22",
+      label: "Estados Atendidos",
+    },
+    {
+      icon: "⚡",
+      number: "24h",
+      label: "Atendimento",
+    },
+  ];
+
+  const infrastructure = [
+    {
+      icon: "📡",
+      title: "NOC Próprio",
+      desc: "Monitoramento 24 horas por dia da sua infraestrutura.",
+    },
+    {
+      icon: "🎧",
+      title: "Suporte Técnico Especializado",
+      desc: "Equipe técnica própria pronta para atender.",
+    },
+    {
+      icon: "🌐",
+      title: "SD-WAN Fortinet",
+      desc: "Integração completa entre matriz e filiais.",
+    },
+    {
+      icon: "🛡️",
+      title: "Segurança Corporativa",
+      desc: "Infraestrutura preparada para ambientes críticos.",
+    },
+    {
+      icon: "⚙️",
+      title: "Projetos Personalizados",
+      desc: "Dimensionamento sob medida para cada empresa.",
+    },
+    {
+      icon: "📍",
+      title: "Implantação Nacional",
+      desc: "Atendimento em todo o território brasileiro.",
+    },
+  ];
+
+  const fortinetPerks = [
+    {
+      icon: "🛡️",
+      label: "Mais segurança",
+    },
+    {
+      icon: "⚡",
+      label: "Mais estabilidade",
+    },
+    {
+      icon: "⚙️",
+      label: "Mais gerenciamento",
+    },
+    {
+      icon: "🚀",
+      label: "Mais desempenho",
+    },
+  ];
+
+  const WHATSAPP = "https://wa.me/5554984130000";
+
+  const perks = [
+    {
+      icon: "bi-shield-check",
+      label: "Mais segurança",
+    },
+    {
+      icon: "bi-speedometer2",
+      label: "Mais estabilidade",
+    },
+    {
+      icon: "bi-sliders",
+      label: "Mais gerenciamento",
+    },
+    {
+      icon: "bi-rocket-takeoff",
+      label: "Mais desempenho",
+    },
+  ];
+
+  const benefits = [
+    {
+      icon: <FontAwesomeIcon icon={faGaugeHigh} />,
+      title: "Alta velocidade",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faClock} />,
+      title: "Baixa latência",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faGlobe} />,
+      title: "Cobertura nacional",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faRocket} />,
+      title: "Implantação rápida",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faShieldHalved} />,
+      title: "Alta disponibilidade",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faMountain} />,
+      title: "Ideal para áreas remotas",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faArrowsLeftRight} />,
+      title: "Mobilidade",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
+      title: "Operação 24x7",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faLayerGroup} />,
+      title: "Escalabilidade",
+    },
+  ];
+
+  return (
+    <>
+      <Menu />
+      <section id="inicio" className={styles.hero}>
+        <img
+          src="/static/images/hero-starlink.jpg"
+          alt="Starlink Corporativa"
+          className={styles.heroBg}
+        />
+
+        <div className={styles.heroOverlay}></div>
+        <div className={styles.heroGrid}></div>
+
+        <div className={styles.glow1}></div>
+        <div className={styles.glow2}></div>
+
+        <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>
+            <span className={styles.badgeDot}></span>
+            Provedor Autorizado Starlink Business
+          </div>
+
+          <h1>
+            Starlink Corporativa
+            <br />
+            <span>para Empresas</span>
+          </h1>
+
+          <p>
+            Conectividade via satélite de alta performance para operações
+            críticas, frotas, embarcações, aeronaves, unidades remotas e
+            empresas que não podem parar.
+          </p>
+
+          <div className={styles.heroButtons}>
+            <a
+              href="https://wa.me/5554984130000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnPrimary}
+            >
+              💬 Solicitar Consultoria →
+            </a>
+
+            <a href="#solucoes" className={styles.btnSecondary}>
+              ⚡ Consultar Planos
+            </a>
+          </div>
+
+          <div className={styles.heroStats}>
+            <div>
+              <h3>99.9%</h3>
+              <span>Disponibilidade</span>
+            </div>
+
+            <div>
+              <h3>&lt;40ms</h3>
+              <span>Latência</span>
+            </div>
+
+            <div>
+              <h3>220Mbps</h3>
+              <span>Velocidade</span>
+            </div>
+
+            <div>
+              <h3>24/7</h3>
+              <span>Suporte NOC</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.heroFade}></div>
+      </section>
+
+      <section id="solucoes" className={styles.solutions}>
+        <div className={styles.interno}>
+          <div className={styles.sectionTitle}>
+            <span>NOSSAS SOLUÇÕES</span>
+
+            <h2>
+              Soluções <strong>Starlink Corporativa</strong>
+            </h2>
+
+            <p>
+              Planos e configurações desenhados para cada tipo de operação
+              empresarial, com IP público, gerenciamento e suporte
+              especializado.
+            </p>
+          </div>
+
+          <div className={styles.solutionsGrid}>
+            {solutions.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article className={styles.solutionCard} key={item.title}>
+                  <div className={styles.solutionIcon}>{item.icon}</div>
+
+                  <h3>{item.title}</h3>
+
+                  <p>{item.subtitle}</p>
+
+                  <ul>
+                    {item.benefits.map((benefit) => (
+                      <li key={benefit}>{benefit}</li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="https://wa.me/5554984130000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Consultar valores →
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="gvatec" className={styles.about}>
+        <div className={styles.interno}>
+          <div className={styles.aboutImage}>
+            <img src="/static/images/about-noc.jpg" alt="Centro de operações" />
+
+            <div className={styles.aboutBadge}>
+              <span className={styles.greenDot}></span>
+              NOC ativo agora
+            </div>
+          </div>
+
+          <div className={styles.aboutContent}>
+            <span className={styles.aboutMini}>SOBRE A GVATEC</span>
+
+            <h2>
+              Por que escolher a <strong>GVATEC</strong>?
+            </h2>
+
+            <p>
+              A GVATEC é especializada em soluções corporativas de tecnologia,
+              atuando com conectividade, infraestrutura de redes e suporte
+              especializado para empresas de todos os portes.
+            </p>
+
+            <p>
+              Nossa missão é entregar soluções confiáveis, escaláveis e de alta
+              disponibilidade para ambientes corporativos.
+            </p>
+
+            <p>
+              Oferecemos muito mais do que conectividade. Entregamos
+              inteligência em redes, segurança e suporte especializado.
+            </p>
+
+            <div className={styles.statsGrid}>
+              {stats.map((item) => (
+                <div className={styles.statCard} key={item.label}>
+                  <div className={styles.statIcon}>{item.icon}</div>
+
+                  <h3>{item.number}</h3>
+
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.infrastructure}>
+        <div className={styles.interno}>
+          <div className={styles.sectionTitle}>
+            <span>INFRAESTRUTURA</span>
+
+            <h2>
+              Infraestrutura <strong>Completa</strong>
+            </h2>
+
+            <p>
+              Uma operação de ponta a ponta para manter sua empresa sempre
+              conectada.
+            </p>
+          </div>
+
+          <div className={styles.infrastructureGrid}>
+            {infrastructure.map((item) => (
+              <div className={styles.infrastructureCard} key={item.title}>
+                <div className={styles.infrastructureIcon}>{item.icon}</div>
+
+                <h3>{item.title}</h3>
+
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.fortinet}>
+        <div className={styles.fortinetGlow}></div>
+
+        <div className={styles.interno}>
+          <div className={styles.fortinetContent}>
+            <span className={styles.fortinetMini}>INTEGRAÇÃO FORTINET</span>
+
+            <h2>
+              Potencialize sua conectividade Starlink com
+              <strong> SD-WAN Fortinet</strong>
+            </h2>
+
+            <p>
+              Integração completa para ambientes multi-site com segurança de
+              nível corporativo, alta disponibilidade e gestão centralizada.
+            </p>
+
+            <div className={styles.fortinetGrid}>
+              {fortinetPerks.map((item) => (
+                <div className={styles.fortinetItem} key={item.label}>
+                  <span className={styles.fortinetIcon}>{item.icon}</span>
+
+                  {item.label}
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="https://wa.me/5554984130000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnPrimary}
+            >
+              💬 Falar com Especialista
+            </a>
+          </div>
+
+          <div className={styles.fortinetImage}>
+            <img src="/static/images/fortinet-integration.jpg" alt="Fortinet" />
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficios" className={styles.benefits}>
+        <div className={styles.interno}>
+          <div className={styles.sectionTitle}>
+            <span>Benefícios</span>
+
+            <h2>
+              Benefícios da <strong>Starlink Corporativa</strong>
+            </h2>
+
+            <p>
+              Uma plataforma pronta para sustentar suas operações mais
+              exigentes.
+            </p>
+          </div>
+
+          <div className={styles.benefitsGrid}>
+            {benefits.map((item) => (
+              <div className={styles.benefitCard} key={item.title}>
+                <div className={styles.benefitIcon}>{item.icon}</div>
+
+                <h3>{item.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" className={styles.cta}>
+        <div className={styles.ctaGrid}></div>
+
+        <div className={styles.ctaGlowLeft}></div>
+
+        <div className={styles.ctaGlowRight}></div>
+
+        <div className={styles.interno}>
+          <div className={styles.ctaContent}>
+            <h2>
+              Sua empresa merece uma conexão
+              <br />
+              preparada para qualquer desafio.
+            </h2>
+
+            <p>
+              Fale agora com um especialista GVATEC e receba uma proposta
+              personalizada para sua operação.
+            </p>
+
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnCta}
+            >
+              <img
+                src="/static/images/whatsapp-icon.png"
+                alt="WhatsApp"
+                className={styles.whatsappIcon}
+              />
+
+              <span>Solicitar Consultoria Especializada</span>
+
+              <img
+                src="/static/images/flecha.png"
+                alt="Seta para a direita"
+                className={styles.arrowRightIcon}
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Rodape />
+      <Whats />
+    </>
+  );
+}

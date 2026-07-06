@@ -1,0 +1,158 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(180deg, #081f3d 0%, #06162b 100%);
+  overflow: hidden;
+  color: #fff;
+}
+
+.footerOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(rgba(40, 158, 216, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 158, 216, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.footer .interno {
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  padding: 90px 0 40px;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 70px;
+}
+
+.footerLogo {
+  width: 180px;
+  height: auto;
+}
+
+.footerText {
+  margin-top: 25px;
+  max-width: 340px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.footerTitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.footerMenu,
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footerMenu a,
+.footerContact a,
+.footerContact li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  transition: 0.3s;
+}
+
+.footerMenu a:hover,
+.footerContact a:hover {
+  color: #289ed8;
+}
+
+.footerIcon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 35px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #289ed8, #1d7eb5);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.footerButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(40, 158, 216, 0.35);
+}
+
+.footerBottom {
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footerBottom p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newfly {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.newfly:hover {
+  color: #fff;
+}
+
+.newfly img {
+  height: 20px;
+  width: auto;
+  opacity: 0.85;
+}
+
+@media (max-width: 991px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

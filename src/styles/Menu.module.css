@@ -1,0 +1,142 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: 0.4s;
+}
+
+.headerScrolled {
+  background: rgba(8, 17, 36, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.menuContainer {
+  max-width: 1400px;
+  margin: auto;
+  height: 90px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 38px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #1aa8ff;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+.cta {
+  text-decoration: none;
+  background: linear-gradient(90deg, #1aa8ff, #2d6dff);
+  color: #fff;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.mobileButton {
+  display: none;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.mobileCTA {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .menuContainer {
+    height: 75px;
+    padding: 0 1.5rem;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .mobileButton {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 75px;
+    width: 100%;
+    background: #081124;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: 0.3s;
+  }
+
+  .navMobileOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav a {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobileCTA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1aa8ff, #2d6dff);
+    border: none !important;
+    font-weight: 700;
+  }
+}
