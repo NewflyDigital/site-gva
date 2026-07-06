@@ -36,29 +36,6 @@ export default function Home() {
       ],
     },
     {
-      icon: "🚢",
-      title: "Starlink Marítima",
-      subtitle: "Conectividade estável para navegação e operações offshore.",
-      benefits: [
-        "Embarcações",
-        "Plataformas",
-        "Pesca",
-        "Navegação offshore",
-        "Internet em alto-mar",
-      ],
-    },
-    {
-      icon: "✈️",
-      title: "Starlink Aviação",
-      subtitle: "Internet corporativa a bordo com latência baixíssima.",
-      benefits: [
-        "Aviões Executivos",
-        "Operações aéreas",
-        "Internet durante o voo",
-        "Baixa latência",
-      ],
-    },
-    {
       icon: "🚁",
       title: "Starlink Helicóptero",
       subtitle:
@@ -253,7 +230,7 @@ export default function Home() {
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
             <span className={styles.badgeDot}></span>
-            Provedor Autorizado Starlink Business
+            Provedor Starlink
           </div>
 
           <h1>
@@ -473,6 +450,49 @@ export default function Home() {
           </div>
 
           <div className={styles.fortinetImage}>
+            <img src="/static/images/fortinet-integration.jpg" alt="Fortinet" />
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.fortinet2}>
+        <div className={styles.fortinetGlow2}></div>
+
+        <div className={styles.interno}>
+          <div className={styles.fortinetContent2}>
+            <span className={styles.fortinetMini2}>INTEGRAÇÃO FORTINET</span>
+
+            <h2>
+              Potencialize sua conectividade Starlink com
+              <strong> SD-WAN Fortinet</strong>
+            </h2>
+
+            <p>
+              Integração completa para ambientes multi-site com segurança de
+              nível corporativo, alta disponibilidade e gestão centralizada.
+            </p>
+
+            <div className={styles.fortinetGrid2}>
+              {fortinetPerks.map((item) => (
+                <div className={styles.fortinetItem2} key={item.label}>
+                  <span className={styles.fortinetIcon2}>{item.icon}</span>
+
+                  {item.label}
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="https://wa.me/5554984130000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnPrimary2}
+            >
+              💬 Falar com Especialista
+            </a>
+          </div>
+
+          <div className={styles.fortinetImage2}>
             <img src="/static/images/fortinet-integration.jpg" alt="Fortinet" />
           </div>
         </div>
