@@ -23,7 +23,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function Home() {
   const solutions = [
     {
-      icon: "🚚",
+      icon: "/static/images/frota.png",
       title: "Starlink Frota",
       subtitle:
         "Caminhões, ônibus, máquinas agrícolas, veículos de mineração e operações móveis.",
@@ -36,7 +36,7 @@ export default function Home() {
       ],
     },
     {
-      icon: "🚁",
+      icon: "/static/images/helicoptero.png",
       title: "Starlink Helicóptero",
       subtitle:
         "Operações críticas de resgate, segurança e transporte executivo.",
@@ -48,7 +48,7 @@ export default function Home() {
       ],
     },
     {
-      icon: "🖥️",
+      icon: "/static/images/ip.png",
       title: "Starlink Fixa com IP Público",
       subtitle:
         "Solução completa para matrizes, filiais e servidores corporativos.",
@@ -62,7 +62,7 @@ export default function Home() {
       ],
     },
     {
-      icon: "📡",
+      icon: "/static/images/nat.png",
       title: "Starlink Fixa com IP NAT",
       subtitle:
         "Excelente custo-benefício para locais remotos e projetos temporários.",
@@ -78,22 +78,22 @@ export default function Home() {
 
   const stats = [
     {
-      icon: "👥",
+      icon: "/static/images/empresas.png",
       number: "500+",
       label: "Empresas Atendidas",
     },
     {
-      icon: "📈",
+      icon: "/static/images/projetos.png",
       number: "1200+",
       label: "Projetos Entregues",
     },
     {
-      icon: "🛡️",
+      icon: "/static/images/estados.png",
       number: "22",
       label: "Estados Atendidos",
     },
     {
-      icon: "⚡",
+      icon: "/static/images/raio.png",
       number: "24h",
       label: "Atendimento",
     },
@@ -101,32 +101,32 @@ export default function Home() {
 
   const infrastructure = [
     {
-      icon: "📡",
+      icon: "/static/images/noc.png",
       title: "NOC Próprio",
       desc: "Monitoramento 24 horas por dia da sua infraestrutura.",
     },
     {
-      icon: "🎧",
+      icon: "/static/images/atendimento.png",
       title: "Suporte Técnico Especializado",
       desc: "Equipe técnica própria pronta para atender.",
     },
     {
-      icon: "🌐",
+      icon: "/static/images/wan.png",
       title: "SD-WAN Fortinet",
       desc: "Integração completa entre matriz e filiais.",
     },
     {
-      icon: "🛡️",
+      icon: "/static/images/estados.png",
       title: "Segurança Corporativa",
       desc: "Infraestrutura preparada para ambientes críticos.",
     },
     {
-      icon: "⚙️",
+      icon: "/static/images/projetos2.png",
       title: "Projetos Personalizados",
       desc: "Dimensionamento sob medida para cada empresa.",
     },
     {
-      icon: "📍",
+      icon: "/static/images/implantacao.png",
       title: "Implantação Nacional",
       desc: "Atendimento em todo o território brasileiro.",
     },
@@ -134,21 +134,28 @@ export default function Home() {
 
   const fortinetPerks = [
     {
-      icon: "🛡️",
+      icon: "/static/images/estados.png",
       label: "Mais segurança",
     },
     {
-      icon: "⚡",
+      icon: "/static/images/raio.png",
       label: "Mais estabilidade",
     },
     {
-      icon: "⚙️",
+      icon: "/static/images/projetos2.png",
       label: "Mais gerenciamento",
     },
     {
-      icon: "🚀",
+      icon: "/static/images/desempenho.png",
       label: "Mais desempenho",
     },
+  ];
+
+  const fortinetPerks2 = [
+    { icon: "🛡️", label: "Mais segurança" },
+    { icon: "⚡", label: "Mais estabilidade" },
+    { icon: "⚙️", label: "Mais gerenciamento" },
+    { icon: "🚀", label: "Mais desempenho" },
   ];
 
   const WHATSAPP = "https://wa.me/5554984130000";
@@ -252,11 +259,13 @@ export default function Home() {
               rel="noopener noreferrer"
               className={styles.btnPrimary}
             >
-              💬 Solicitar Consultoria →
+              <img src="/static/images/whatsapp-icon.png" alt="WhatsApp" />{" "}
+              Solicitar Consultoria
+              <img src="/static/images/flecha.png" alt="Flecha" />{" "}
             </a>
 
             <a href="#solucoes" className={styles.btnSecondary}>
-              ⚡ Consultar Planos
+              <img src="/static/images/raio.png" alt="raio" /> Consultar Planos
             </a>
           </div>
 
@@ -289,6 +298,94 @@ export default function Home() {
       <section id="solucoes" className={styles.solutions}>
         <div className={styles.interno}>
           <div className={styles.sectionTitle}>
+            <span>NOSSOS PRODUTOS</span>
+
+            <h2>
+              Soluções para sua <strong>Empresa</strong>
+            </h2>
+
+            <p>
+              Conheça as soluções corporativas da GVATEC para conectividade,
+              gerenciamento e alta disponibilidade.
+            </p>
+          </div>
+
+          <div className={styles.productsGrid}>
+            {/* STARLINK */}
+            <article className={styles.productCard}>
+              <div className={styles.productImage}>
+                <img
+                  src="/static/images/hero-starlink.jpg"
+                  alt="Starlink Corporativa"
+                />
+              </div>
+
+              <div className={styles.productContent}>
+                <h3>Starlink Corporativa para Empresas</h3>
+
+                <p>
+                  Internet via satélite de alta performance para empresas, áreas
+                  remotas, filiais e operações críticas.
+                </p>
+
+                <ul>
+                  <li>Starlink Frota</li>
+                  <li>Starlink Helicóptero</li>
+                  <li>Starlink Fixa com IP Público</li>
+                  <li>Starlink Fixa com IP NAT</li>
+                </ul>
+
+                <a
+                  href="https://wa.me/5554984130000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar solução →
+                </a>
+              </div>
+            </article>
+
+            {/* SD-WAN */}
+            <article className={styles.productCard}>
+              <div className={styles.productImage}>
+                <img
+                  src="/static/images/hero-starlink.jpg"
+                  alt="Sistema SD-One Fortinet"
+                />
+              </div>
+
+              <div className={styles.productContent}>
+                <h3>Sistema SD-One Fortinet para sua Empresa</h3>
+
+                <p>
+                  Gerenciamento inteligente da sua rede corporativa com
+                  segurança, estabilidade e controle centralizado.
+                </p>
+
+                <ul>
+                  <li>SD-WAN Fortinet</li>
+                  <li>Balanceamento de Links</li>
+                  <li>VPN Corporativa</li>
+                  <li>Firewall Integrado</li>
+                </ul>
+
+                <a
+                  href="https://wa.me/5554984130000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar solução →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Antiga SOluções
+<section id="solucoes" className={styles.solutions}>
+        <div className={styles.interno}>
+          <div className={styles.sectionTitle}>
             <span>NOSSAS SOLUÇÕES</span>
 
             <h2>
@@ -308,8 +405,13 @@ export default function Home() {
 
               return (
                 <article className={styles.solutionCard} key={item.title}>
-                  <div className={styles.solutionIcon}>{item.icon}</div>
-
+                  <div className={styles.solutionIcon}>
+                    <img
+                      src={item.icon}
+                      alt={item.title}
+                      className={styles.solutionIconImage}
+                    />
+                  </div>
                   <h3>{item.title}</h3>
 
                   <p>{item.subtitle}</p>
@@ -333,7 +435,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+*/}
       <section id="gvatec" className={styles.about}>
         <div className={styles.interno}>
           <div className={styles.aboutImage}>
@@ -371,8 +473,13 @@ export default function Home() {
             <div className={styles.statsGrid}>
               {stats.map((item) => (
                 <div className={styles.statCard} key={item.label}>
-                  <div className={styles.statIcon}>{item.icon}</div>
-
+                  <div className={styles.statIcon}>
+                    <img
+                      src={item.icon}
+                      alt={item.label}
+                      className={styles.statIconImage}
+                    />
+                  </div>
                   <h3>{item.number}</h3>
 
                   <span>{item.label}</span>
@@ -401,8 +508,13 @@ export default function Home() {
           <div className={styles.infrastructureGrid}>
             {infrastructure.map((item) => (
               <div className={styles.infrastructureCard} key={item.title}>
-                <div className={styles.infrastructureIcon}>{item.icon}</div>
-
+                <div className={styles.infrastructureIcon}>
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    className={styles.infrastructureIconImage}
+                  />
+                </div>
                 <h3>{item.title}</h3>
 
                 <p>{item.desc}</p>
@@ -432,8 +544,13 @@ export default function Home() {
             <div className={styles.fortinetGrid}>
               {fortinetPerks.map((item) => (
                 <div className={styles.fortinetItem} key={item.label}>
-                  <span className={styles.fortinetIcon}>{item.icon}</span>
-
+                  <div className={styles.fortinetIcon}>
+                    <img
+                      src={item.icon}
+                      alt={item.label}
+                      className={styles.fortinetIconImage}
+                    />
+                  </div>
                   {item.label}
                 </div>
               ))}
@@ -445,7 +562,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className={styles.btnPrimary}
             >
-              💬 Falar com Especialista
+              <img src="/static/images/whatsapp-icon.png" alt="WhatsApp" />{" "}
+              Falar com Especialista
             </a>
           </div>
 
@@ -473,7 +591,7 @@ export default function Home() {
             </p>
 
             <div className={styles.fortinetGrid2}>
-              {fortinetPerks.map((item) => (
+              {fortinetPerks2.map((item) => (
                 <div className={styles.fortinetItem2} key={item.label}>
                   <span className={styles.fortinetIcon2}>{item.icon}</span>
 
