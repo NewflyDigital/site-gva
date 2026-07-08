@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(180deg, #081f3d 0%, #06162b 100%);
+  background: linear-gradient(180deg, #8a4b04 0%, #2b1b06 100%);
   overflow: hidden;
   color: #fff;
 }
@@ -15,8 +15,8 @@
   inset: 0;
   opacity: 0.08;
   background-image:
-    linear-gradient(rgba(40, 158, 216, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(40, 158, 216, 0.35) 1px, transparent 1px);
+    linear-gradient(rgba(255, 138, 0, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 138, 0, 0.35) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -77,7 +77,7 @@
 
 .footerMenu a:hover,
 .footerContact a:hover {
-  color: #289ed8;
+  color: #ff8a00;
 }
 
 .footerIcon {
@@ -93,7 +93,7 @@
   margin-top: 35px;
   padding: 14px 28px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #289ed8, #1d7eb5);
+  background: linear-gradient(135deg, #ff8a00, #b5661d);
   color: #fff;
   font-weight: 600;
   transition: 0.3s;
@@ -101,7 +101,7 @@
 
 .footerButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 35px rgba(40, 158, 216, 0.35);
+  box-shadow: 0 18px 35px rgba(255, 138, 0, 0.35);
 }
 
 .footerBottom {

@@ -27,7 +27,7 @@ class DocumentosSite extends Document {
 
           <meta name="author" content="GVATEC" />
           <meta name="robots" content="index,follow" />
-          <meta name="theme-color" content="#081F3D" />
+          <meta name="theme-color" content="#8a4b04" />
 
           {/* Open Graph */}
           <meta property="og:type" content="website" />
