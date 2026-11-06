@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --navy-deep: #8a4b04;
+  --navy-deep: #081f3d;
   --navy: #0d2a52;
-  --brand: #ff8a00;
-  --brand-glow: #ffb347;
+  --brand: #289ed8;
+  --brand-glow: #5ec4f0;
   --surface: #f4f7fa;
 }
 
@@ -24,7 +24,7 @@ body {
   font-family: Roboto, sans-serif;
   overflow-x: hidden;
   background: #fff;
-  color: #8a4b04;
+  color: #081f3d;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,32 +57,32 @@ section {
 .glass-dark {
   background: rgba(8, 31, 61, 0.55);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 138, 0, 0.15);
+  border: 1px solid rgba(40, 158, 216, 0.15);
 }
 
 .text-gradient-brand {
-  background: linear-gradient(135deg, #ff8a00, #ffb347, #fff);
+  background: linear-gradient(135deg, #289ed8, #5ec4f0, #fff);
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .bg-gradient-brand {
-  background: linear-gradient(135deg, #ff8a00, #b56c19);
+  background: linear-gradient(135deg, #289ed8, #1a7fb5);
 }
 
 .bg-gradient-hero {
   background:
     radial-gradient(
       circle at top right,
-      rgba(255, 138, 0, 0.25),
+      rgba(40, 158, 216, 0.25),
       transparent 55%
     ),
     radial-gradient(
       circle at bottom left,
-      rgba(255, 138, 0, 0.15),
+      rgba(40, 158, 216, 0.15),
       transparent 55%
     ),
-    linear-gradient(180deg, #8a4b04, #0d2a52);
+    linear-gradient(180deg, #081f3d, #0d2a52);
 }
 
 .bg-grid-pattern {
@@ -93,7 +93,7 @@ section {
 }
 
 .shadow-glow {
-  box-shadow: 0 20px 60px rgba(255, 138, 0, 0.25);
+  box-shadow: 0 20px 60px rgba(40, 158, 216, 0.25);
 }
 
 .shadow-elegant {
@@ -135,10 +135,10 @@ section {
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 25px rgba(255, 138, 0, 0.35);
+    box-shadow: 0 0 25px rgba(40, 158, 216, 0.35);
   }
   50% {
-    box-shadow: 0 0 55px rgba(255, 138, 0, 0.75);
+    box-shadow: 0 0 55px rgba(40, 158, 216, 0.75);
   }
 }
 
@@ -179,5 +179,5 @@ section {
 
 .card-glow:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(255, 138, 0, 0.25);
+  box-shadow: 0 20px 60px rgba(40, 158, 216, 0.25);
 }

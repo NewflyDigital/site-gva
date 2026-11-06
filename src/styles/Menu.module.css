@@ -8,7 +8,7 @@
 }
 
 .headerScrolled {
-  background: rgba(36, 23, 8, 0.92);
+  background: rgba(8, 17, 36, 0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -48,7 +48,7 @@
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: #ff941a;
+  background: #1aa8ff;
   transition: 0.3s;
 }
 
@@ -62,7 +62,7 @@
 
 .cta {
   text-decoration: none;
-  background: linear-gradient(90deg, #ff941a, #ffab2e);
+  background: linear-gradient(90deg, #1aa8ff, #2d6dff);
   color: #fff;
   padding: 0.9rem 1.5rem;
   border-radius: 999px;
@@ -135,7 +135,7 @@
     margin-top: 1.5rem;
     padding: 1rem;
     border-radius: 999px;
-    background: linear-gradient(90deg, #ff941a, #ffab2e);
+    background: linear-gradient(90deg, #1aa8ff, #2d6dff);
     border: none !important;
     font-weight: 700;
   }

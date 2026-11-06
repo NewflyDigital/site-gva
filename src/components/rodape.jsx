@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <img
               src="/static/images/gva-logo.png"
-              alt="GVATEC"
+              alt="GVATECH"
               className={styles.footerLogo}
             />
 
@@ -47,7 +47,7 @@ export default function Footer() {
                 <a href="#beneficios">Benefícios</a>
               </li>
               <li>
-                <a href="#gvatec">GVATEC</a>
+                <a href="#GVATECH">GVATECH</a>
               </li>
               <li>
                 <a href="#contato">Contato</a>
@@ -99,7 +99,7 @@ export default function Footer() {
 
       <div className={styles.footerBottom}>
         <p>
-          © {new Date().getFullYear()} GVATEC. Todos os direitos reservados.
+          © {new Date().getFullYear()} GVATECH. Todos os direitos reservados.
         </p>
 
         <a

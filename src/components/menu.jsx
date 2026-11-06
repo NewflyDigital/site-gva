@@ -27,7 +27,7 @@ function Menu() {
         <a href="#inicio">
           <img
             src="/static/images/gva-logo.png"
-            alt="GVATEC"
+            alt="GVATECH"
             className={styles.logo}
           />
         </a>
@@ -45,8 +45,8 @@ function Menu() {
             Benefícios
           </a>
 
-          <a href="#gvatec" onClick={() => setMobile(false)}>
-            GVATEC
+          <a href="#GVATECH" onClick={() => setMobile(false)}>
+            GVATECH
           </a>
 
           <a href="#contato" onClick={() => setMobile(false)}>

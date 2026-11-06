@@ -13,19 +13,19 @@ class DocumentosSite extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <title>GVATEC | Soluções Starlink Corporativa para Empresas</title>
+          <title>GVATECH | Soluções Starlink Corporativa para Empresas</title>
           {/* SEO */}
           <meta
             name="description"
-            content="GVATEC é especialista em Starlink Corporativa, conectividade empresarial, SD-WAN Fortinet, infraestrutura de redes, IP Público, internet corporativa e suporte especializado para empresas."
+            content="GVATECH é especialista em Starlink Corporativa, conectividade empresarial, SD-WAN Fortinet, infraestrutura de redes, IP Público, internet corporativa e suporte especializado para empresas."
           />
 
           <meta
             name="keywords"
-            content="GVATEC, Starlink Corporativa, Starlink Empresas, Internet Corporativa, SD-WAN Fortinet, Fortinet, IP Público, Redes Corporativas, Infraestrutura de TI, Conectividade Empresarial, Internet Satelital"
+            content="GVATECH, Starlink Corporativa, Starlink Empresas, Internet Corporativa, SD-WAN Fortinet, Fortinet, IP Público, Redes Corporativas, Infraestrutura de TI, Conectividade Empresarial, Internet Satelital"
           />
 
-          <meta name="author" content="GVATEC" />
+          <meta name="author" content="GVATECH" />
           <meta name="robots" content="index,follow" />
           <meta name="theme-color" content="#8a4b04" />
 
@@ -33,18 +33,18 @@ class DocumentosSite extends Document {
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="GVATEC | Especialista em Starlink Corporativa"
+            content="GVATECH | Especialista em Starlink Corporativa"
           />
           <meta
             property="og:description"
             content="Soluções completas em Starlink Corporativa, SD-WAN Fortinet, infraestrutura de redes e conectividade empresarial."
           />
 
-          <meta property="og:url" content="https://www.gvatec.com.br/" />
+          <meta property="og:url" content="https://www.gvatech.com.br/" />
 
           <meta
             property="og:image"
-            content="https://www.gvatec.com.br/og-image.jpg"
+            content="https://www.gvatech.com.br/og-image.jpg"
           />
 
           <meta property="og:locale" content="pt_BR" />
@@ -53,7 +53,7 @@ class DocumentosSite extends Document {
           <meta name="twitter:card" content="summary_large_image" />
 
           {/* Canonical */}
-          <link rel="canonical" href="https://www.gvatec.com.br/" />
+          <link rel="canonical" href="https://www.gvatech.com.br/" />
 
           {/* Ícone */}
           <link rel="icon" href="/favicon.ico" />

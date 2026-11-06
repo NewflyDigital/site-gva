@@ -99,6 +99,28 @@ export default function Home() {
     },
   ];
 
+  const parceiros = [
+    "Avivar",
+    "banrisul",
+    "Carbonifera",
+    "ccgl",
+    "Conlog",
+    "cooxupe",
+    "equatorial",
+    "ExpressoEmbaixador",
+    "flamboia",
+    "Guapi-Papeis",
+    "laponia",
+    "lebes",
+    "NeoRodas",
+    "pesacat",
+    "saojoao",
+    "sicredi",
+    "stokcenter",
+    "Termasa",
+    "zaffari",
+  ];
+
   const infrastructure = [
     {
       icon: "/static/images/noc.png",
@@ -218,14 +240,81 @@ export default function Home() {
     },
   ];
 
+  const partnersRef = useRef(null);
+
+  const moverParceiros = (direcao) => {
+    const container = partnersRef.current;
+    if (!container) return;
+
+    const primeiroCard = container.querySelector(`.${styles.partnerCard}`);
+
+    if (!primeiroCard) return;
+
+    const distancia = primeiroCard.offsetWidth + 24;
+
+    const proximaPosicao = container.scrollLeft + distancia * direcao;
+
+    if (
+      direcao > 0 &&
+      proximaPosicao >= container.scrollWidth - container.clientWidth - 10
+    ) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (direcao < 0 && container.scrollLeft <= 10) {
+      container.scrollTo({
+        left: container.scrollWidth,
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    container.scrollBy({
+      left: distancia * direcao,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const container = partnersRef.current;
+    if (!container) return;
+
+    const intervalo = setInterval(() => {
+      const card = container.querySelector(`.${styles.partnerCard}`);
+
+      if (!card) return;
+
+      const distancia = card.offsetWidth + 24;
+
+      const chegouAoFinal =
+        container.scrollLeft + container.clientWidth >=
+        container.scrollWidth - 10;
+
+      if (chegouAoFinal) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({
+          left: distancia,
+          behavior: "smooth",
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(intervalo);
+  }, []);
+
   return (
     <>
       <Menu />
       <section id="inicio" className={styles.hero}>
-        <img
-          src="/static/images/banner.jpg"
-          alt="Starlink Corporativa"
+        <video
+          src="/static/videos/banner.mp4"
           className={styles.heroBg}
+          autoPlay
+          muted
+          loop
+          playsInline
         />
 
         <div className={styles.heroOverlay}></div>
@@ -305,7 +394,7 @@ export default function Home() {
             </h2>
 
             <p>
-              Conheça as soluções corporativas da GVATEC para conectividade,
+              Conheça as soluções corporativas da GVATECH para conectividade,
               gerenciamento e alta disponibilidade.
             </p>
           </div>
@@ -330,7 +419,6 @@ export default function Home() {
 
                 <ul>
                   <li>Starlink Frota</li>
-                  <li>Starlink Helicóptero</li>
                   <li>Starlink Fixa com IP Público</li>
                   <li>Starlink Fixa com IP NAT</li>
                 </ul>
@@ -350,12 +438,12 @@ export default function Home() {
               <div className={styles.productImage}>
                 <img
                   src="/static/images/hero-fortinet.jpg"
-                  alt="Sistema SD-One Fortinet"
+                  alt="Sistema SD-WAN Fortinet"
                 />
               </div>
 
               <div className={styles.productContent}>
-                <h3>Sistema SD-One Fortinet para sua Empresa</h3>
+                <h3>Sistema SD-WAN Fortinet para sua Empresa</h3>
 
                 <p>
                   Gerenciamento inteligente da sua rede corporativa com
@@ -436,7 +524,7 @@ export default function Home() {
         </div>
       </section>
 */}
-      <section id="gvatec" className={styles.about}>
+      <section id="GVATECH" className={styles.about}>
         <div className={styles.interno}>
           <div className={styles.aboutImage}>
             <img
@@ -451,14 +539,14 @@ export default function Home() {
           </div>
 
           <div className={styles.aboutContent}>
-            <span className={styles.aboutMini}>SOBRE A GVATEC</span>
+            <span className={styles.aboutMini}>SOBRE A GVATECH</span>
 
             <h2>
-              Por que escolher a <strong>GVATEC</strong>?
+              Por que escolher a <strong>GVATECH</strong>?
             </h2>
 
             <p>
-              A GVATEC é especializada em soluções corporativas de tecnologia,
+              A GVATECH é especializada em soluções corporativas de tecnologia,
               atuando com conectividade, infraestrutura de redes e suporte
               especializado para empresas de todos os portes.
             </p>
@@ -493,6 +581,69 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.partners}>
+        <div className={styles.interno}>
+          <div className={styles.partnersHeader}>
+            <div className={styles.partnersTitle}>
+              <span>NOSSOS PARCEIROS</span>
+
+              <h2>
+                Grandes conexões começam com
+                <strong> confiança.</strong>
+              </h2>
+
+              <p>
+                Empresas que confiam na GVATECH e caminham conosco construindo
+                conexões, tecnologia e resultados.
+              </p>
+            </div>
+
+            <div className={styles.partnersControls}>
+              <button
+                type="button"
+                onClick={() => moverParceiros(-1)}
+                aria-label="Parceiros anteriores"
+              >
+                <span>←</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => moverParceiros(1)}
+                aria-label="Próximos parceiros"
+              >
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.partnersCarousel}>
+            <div className={styles.partnersTrack} ref={partnersRef}>
+              {parceiros.map((nome) => (
+                <div className={styles.partnerCard} key={nome}>
+                  <img
+                    src={`/static/images/parceiros/logo-${nome}.jpg`}
+                    alt={`Parceiro ${nome}`}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.partnersBottom}>
+            <div className={styles.partnersBottomLine}></div>
+
+            <span>
+              <span className={styles.partnersDot}></span>
+              Parcerias que fortalecem conexões
+            </span>
+
+            <div className={styles.partnersBottomLine}></div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.infrastructure}>
         <div className={styles.interno}>
           <div className={styles.sectionTitle}>
@@ -523,6 +674,65 @@ export default function Home() {
                 <p>{item.desc}</p>
               </div>
             ))}
+          </div>
+          {/* ESTRUTURA E PRESENÇA NACIONAL */}
+          <div className={styles.infrastructureExtra}>
+            <div className={styles.infrastructureExtraCard}>
+              <div className={styles.infrastructureExtraImage}>
+                <img
+                  src="/static/images/mapa-brasil.jpg"
+                  alt="Mapa de abrangência nacional da GVATECH"
+                />
+              </div>
+
+              <div className={styles.infrastructureExtraContent}>
+                <span>ABRANGÊNCIA NACIONAL</span>
+                <h3>Clientes em todo o Brasil</h3>
+                <p>
+                  Possuímos clientes em todos os estados brasileiros, levando
+                  soluções de conectividade e tecnologia para empresas em
+                  diferentes regiões do país.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.infrastructureExtraCard}>
+              <div className={styles.infrastructureExtraImage}>
+                <img
+                  src="/static/images/sede-passofundo.jpg"
+                  alt="Sede administrativa da GVATECH"
+                />
+              </div>
+
+              <div className={styles.infrastructureExtraContent}>
+                <span>NOSSA SEDE</span>
+                <h3>Sede administrativa</h3>
+                <p>
+                  Nossa sede administrativa está localizada em Passo Fundo, no
+                  Rio Grande do Sul, de onde coordenamos nossas operações e
+                  atividades.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.infrastructureExtraCard}>
+              <div className={styles.infrastructureExtraImage}>
+                <img
+                  src="/static/images/noc.jpg"
+                  alt="Centro de operações NOC da GVATECH"
+                />
+              </div>
+
+              <div className={styles.infrastructureExtraContent}>
+                <span>MONITORAMENTO E OPERAÇÃO</span>
+                <h3>Centro de Operações (NOC)</h3>
+                <p>
+                  Nosso NOC também está localizado em Passo Fundo/RS,
+                  concentrando nossa estrutura de monitoramento e acompanhamento
+                  das operações.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -619,7 +829,7 @@ export default function Home() {
             </h2>
 
             <p>
-              Fale agora com um especialista GVATEC e receba uma proposta
+              Fale agora com um especialista GVATECH e receba uma proposta
               personalizada para sua operação.
             </p>
 
