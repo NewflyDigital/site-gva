@@ -317,8 +317,10 @@ export default function Home() {
           playsInline
         />
 
-        <div className={styles.heroOverlay}></div>
+        {/*
+        <div className={styles.heroOverlay}></div>        
         <div className={styles.heroGrid}></div>
+        */}
 
         <div className={styles.glow1}></div>
         <div className={styles.glow2}></div>
@@ -675,8 +677,10 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {/* ESTRUTURA E PRESENÇA NACIONAL */}
+          {/* ESTRUTURA */}
           <div className={styles.infrastructureExtra}>
+            {/*
+          PRESENÇA NACIONAL
             <div className={styles.infrastructureExtraCard}>
               <div className={styles.infrastructureExtraImage}>
                 <img
@@ -695,6 +699,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          */}
 
             <div className={styles.infrastructureExtraCard}>
               <div className={styles.infrastructureExtraImage}>
@@ -732,6 +737,97 @@ export default function Home() {
                   das operações.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===========================
+    ABRANGÊNCIA NACIONAL
+=========================== */}
+      <section className={styles.nationalReach}>
+        <div className={styles.nationalGrid}></div>
+        <div className={styles.nationalGlow}></div>
+        <div className={styles.nationalGlowSecondary}></div>
+
+        <div className={styles.nationalContainer}>
+          <div className={styles.nationalHeader}>
+            <span className={styles.nationalEyebrow}>
+              <i></i> GVATECH • CONECTIVIDADE NACIONAL
+            </span>
+
+            <h2>
+              Onde sua empresa precisa,
+              <strong> nós estamos.</strong>
+            </h2>
+
+            <p>
+              Tecnologia e conectividade que ultrapassam fronteiras. Uma
+              estrutura preparada para atender empresas em qualquer região do
+              Brasil.
+            </p>
+          </div>
+
+          <div className={styles.nationalVisual}>
+            <div className={styles.nationalMapAura}></div>
+
+            <div className={styles.nationalMap}>
+              <div className={styles.nationalScan}></div>
+
+              <img
+                src="/static/images/Mapa-brasil.png"
+                alt="Mapa do Brasil representando a abrangência nacional da GVATECH"
+              />
+            </div>
+
+            {/* PONTOS DE DESTAQUE */}
+            <div className={styles.nationalTag + " " + styles.tagNorth}>
+              <span className={styles.nationalTagDot}></span>
+              NORTE
+            </div>
+
+            <div className={styles.nationalTag + " " + styles.tagNortheast}>
+              <span className={styles.nationalTagDot}></span>
+              NORDESTE
+            </div>
+
+            <div className={styles.nationalTag + " " + styles.tagCenter}>
+              <span className={styles.nationalTagDot}></span>
+              CENTRO-OESTE
+            </div>
+
+            <div className={styles.nationalTag + " " + styles.tagSoutheast}>
+              <span className={styles.nationalTagDot}></span>
+              SUDESTE
+            </div>
+
+            <div className={styles.nationalTag + " " + styles.tagSouth}>
+              <span className={styles.nationalTagDot}></span>
+              SUL
+            </div>
+
+            {/* INFORMAÇÃO FLUTUANTE */}
+            <div className={styles.nationalFloating}>
+              <span className={styles.nationalFloatingIcon}>✦</span>
+              <div>
+                <strong>Presença nacional</strong>
+                <small>Conectando empresas em todo o Brasil</small>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.nationalFooter}>
+            <div className={styles.nationalFooterText}>
+              <span>ALCANCE QUE CONECTA</span>
+              <h3>Um Brasil inteiro ao seu alcance.</h3>
+            </div>
+
+            <div className={styles.nationalFooterInfo}>
+              <span className={styles.nationalFooterLine}></span>
+              <p>
+                Do planejamento à operação, levamos soluções de conectividade e
+                tecnologia para diferentes regiões do país.
+              </p>
             </div>
           </div>
         </div>
